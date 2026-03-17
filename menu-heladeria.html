@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Sweet Frost | Heladería Artesanal</title>
+
+<link rel="icon" type="image/png" href="SMS STUDIOS LOGO.jfif">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffb3d9,#ffd6a5,#cdb4ff);
+color:#333;
+}
+
+/* watermark */
+
+.watermark{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) rotate(-25deg);
+font-size:70px;
+opacity:.05;
+letter-spacing:8px;
+pointer-events:none;
+z-index:0;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+padding:18px 60px;
+background:rgba(255,255,255,.8);
+backdrop-filter:blur(8px);
+display:flex;
+justify-content:space-between;
+z-index:100;
+}
+
+nav h1{
+font-family:'Fredoka';
+letter-spacing:2px;
+color:#ff4fa3;
+}
+
+nav a{
+text-decoration:none;
+margin-left:25px;
+color:#333;
+font-weight:500;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff4fa3;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+}
+
+.hero h2{
+font-family:'Fredoka';
+font-size:65px;
+margin-bottom:20px;
+color:#ff4fa3;
+}
+
+.hero span{
+color:#6a4cff;
+}
+
+.hero p{
+max-width:600px;
+margin:auto;
+margin-bottom:35px;
+}
+
+.btn{
+padding:14px 36px;
+background:#ff4fa3;
+color:#fff;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn:hover{
+background:#6a4cff;
+}
+
+/* sections */
+
+section{
+padding:110px 12%;
+}
+
+section h3{
+font-family:'Fredoka';
+font-size:42px;
+margin-bottom:40px;
+text-align:center;
+color:#ff4fa3;
+}
+
+/* cards */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+transition:.4s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h4{
+color:#6a4cff;
+margin-bottom:10px;
+}
+
+.price{
+font-size:26px;
+font-weight:600;
+margin:12px 0;
+color:#ff4fa3;
+}
+
+/* opiniones */
+
+.quote{
+font-style:italic;
+}
+
+/* footer */
+
+footer{
+background:#fff;
+padding:40px;
+text-align:center;
+font-size:14px;
+margin-top:40px;
+}
+
+small{opacity:.7}
+
+@media(max-width:900px){
+
+.hero h2{
+font-size:45px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="watermark">SMS STUDIOS</div>
+
+<nav>
+
+<h1>SWEET FROST</h1>
+
+<div>
+<a href="#about">Historia</a>
+<a href="#menu">Sabores</a>
+<a href="#combos">Combos</a>
+<a href="#contact">Ubicación</a>
+</div>
+
+</nav>
+
+
+<div class="hero">
+
+<div>
+
+<h2>Helados que <span>alegran</span> tu día</h2>
+
+<p>
+Heladería artesanal con sabores frescos y cremosos
+preparados con ingredientes de alta calidad.
+</p>
+
+<a class="btn" href="#menu">VER SABORES</a>
+
+</div>
+
+</div>
+
+
+<section id="about">
+
+<h3>Nuestra Heladería</h3>
+
+<p style="text-align:center;max-width:700px;margin:auto">
+
+Sweet Frost nació con la idea de crear helados que
+no solo refresquen, sino que también hagan sonreír.
+
+Cada sabor se prepara con ingredientes frescos
+y recetas artesanales que combinan creatividad
+y tradición.
+
+<br><br>
+
+<strong>⚠ Este sitio es un EJEMPLO.</strong>
+Todos los datos, precios y ubicación son ficticios
+y se utilizan únicamente para demostración
+del portafolio de SMS Studios.
+
+</p>
+
+</section>
+
+
+<section id="menu">
+
+<h3>Sabores Populares</h3>
+
+<div class="cards">
+
+<div class="card">
+<h4>Chocolate Supremo</h4>
+<div class="price">$45 MXN</div>
+<p>Helado cremoso de chocolate intenso.</p>
+</div>
+
+<div class="card">
+<h4>Fresa Natural</h4>
+<div class="price">$45 MXN</div>
+<p>Preparado con fresas frescas.</p>
+</div>
+
+<div class="card">
+<h4>Vainilla Clásica</h4>
+<div class="price">$40 MXN</div>
+<p>Suave y dulce sabor tradicional.</p>
+</div>
+
+<div class="card">
+<h4>Cookies & Cream</h4>
+<div class="price">$50 MXN</div>
+<p>Con trozos de galleta crujiente.</p>
+</div>
+
+<div class="card">
+<h4>Mango Tropical</h4>
+<div class="price">$45 MXN</div>
+<p>Sabor fresco y frutal.</p>
+</div>
+
+<div class="card">
+<h4>Pistache Premium</h4>
+<div class="price">$55 MXN</div>
+<p>Helado cremoso con pistache real.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="combos">
+
+<h3>Combos Especiales</h3>
+
+<div class="cards">
+
+<div class="card">
+
+<h4>Combo Familiar</h4>
+
+<div class="price">$160 MXN</div>
+
+<p>
+4 bolas de helado
++ toppings
++ 4 conos
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>Helado Gigante</h4>
+
+<div class="price">$120 MXN</div>
+
+<p>
+6 bolas de helado
+con chocolate,
+galletas y crema batida
+</p>
+
+</div>
+
+<div class="card">
+
+<h4>Combo Pareja</h4>
+
+<div class="price">$95 MXN</div>
+
+<p>
+2 helados dobles
++ topping
++ salsa de chocolate
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h3>Opiniones</h3>
+
+<div class="cards">
+
+<div class="card quote">
+“Los helados más cremosos que he probado.”
+</div>
+
+<div class="card quote">
+“El sabor de mango es increíble.”
+</div>
+
+<div class="card quote">
+“Perfecto para venir con amigos.”
+</div>
+
+</div>
+
+<br>
+
+<p style="text-align:center">
+<small>Opiniones ficticias usadas solo como ejemplo visual.</small>
+</p>
+
+</section>
+
+
+<section id="contact">
+
+<h3>Ubicación</h3>
+
+<div class="card" style="max-width:500px;margin:auto">
+
+📍 Av. Dulce #245, Ciudad Ficticia<br>
+⏰ Lunes a Domingo | 12:00 PM – 10:00 PM<br><br>
+
+<strong>⚠ Página web de ejemplo – datos no reales</strong>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Diseño web ficticio creado por <strong>SMS Studios</strong><br>
+Uso exclusivo para portafolio y demostración de habilidades
+
+</footer>
+
+</body>
+</html>

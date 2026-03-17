@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>La Mesa Dorada | Menú Restaurante</title>
+
+<link rel="icon" type="image/png" href="SMS STUDIOS LOGO.jfif">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#0b0b0b;
+color:#f7f7f7;
+}
+
+/* WATERMARK */
+
+.watermark{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) rotate(-25deg);
+font-size:70px;
+opacity:.04;
+letter-spacing:8px;
+pointer-events:none;
+z-index:0;
+}
+
+/* NAVBAR */
+
+nav{
+position:fixed;
+width:100%;
+padding:18px 60px;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(6px);
+display:flex;
+justify-content:space-between;
+z-index:100;
+}
+
+nav h1{
+font-family:'Oswald';
+letter-spacing:3px;
+}
+
+nav a{
+color:#fff;
+margin-left:25px;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#e0b45c;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+url("https://images.unsplash.com/photo-1543353071-873f17a7a088") center/cover;
+
+display:flex;
+align-items:center;
+padding:0 12%;
+}
+
+.hero h2{
+font-family:'Playfair Display';
+font-size:65px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#e0b45c;
+}
+
+.hero p{
+max-width:540px;
+opacity:.9;
+margin-bottom:35px;
+}
+
+.btn{
+padding:14px 36px;
+border:1px solid #e0b45c;
+color:#e0b45c;
+text-decoration:none;
+letter-spacing:2px;
+transition:.4s;
+}
+
+.btn:hover{
+background:#e0b45c;
+color:#000;
+}
+
+/* SECCIONES */
+
+section{
+padding:110px 12%;
+}
+
+section h3{
+font-family:'Oswald';
+font-size:42px;
+margin-bottom:30px;
+letter-spacing:2px;
+}
+
+/* CARDS */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:#151515;
+padding:35px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 25px 45px rgba(0,0,0,.6);
+}
+
+.card h4{
+color:#e0b45c;
+margin-bottom:12px;
+}
+
+.price{
+font-size:28px;
+font-weight:600;
+margin:15px 0;
+}
+
+/* OPINIONES */
+
+.quote{
+font-style:italic;
+opacity:.85;
+}
+
+/* FOOTER */
+
+footer{
+background:#000;
+padding:40px;
+text-align:center;
+font-size:14px;
+opacity:.7;
+}
+
+small{opacity:.6}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero h2{
+font-size:45px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="watermark">SMS STUDIOS</div>
+
+<nav>
+
+<h1>LA MESA DORADA</h1>
+
+<div>
+<a href="#about">Historia</a>
+<a href="#menu">Menú</a>
+<a href="#opiniones">Opiniones</a>
+<a href="#contact">Ubicación</a>
+</div>
+
+</nav>
+
+<div class="hero">
+
+<div>
+
+<h2>Sabor que <span>enamora.</span></h2>
+
+<p>
+Restaurante inspirado en la cocina moderna con ingredientes frescos y recetas
+que combinan tradición y creatividad.
+</p>
+
+<a class="btn" href="#menu">VER MENÚ</a>
+
+</div>
+
+</div>
+
+
+<section id="about">
+
+<h3>Nuestra Historia</h3>
+
+<p>
+La Mesa Dorada nace con una idea simple: crear un lugar donde cada platillo
+sea una experiencia.
+<br><br>
+Sabores auténticos, ingredientes seleccionados y un ambiente diseñado
+para disfrutar cada momento.
+<br><br>
+<strong>⚠ Este sitio es un EJEMPLO.</strong>
+Todos los datos, precios y ubicación son ficticios
+y se usan únicamente para demostración en el portafolio de SMS Studios.
+</p>
+
+</section>
+
+
+<section id="menu">
+
+<h3>Entradas</h3>
+
+<div class="cards">
+
+<div class="card">
+<h4>Bruschetta Italiana</h4>
+<div class="price">$120 MXN</div>
+<p>Pan artesanal con tomate fresco, albahaca y aceite de oliva.</p>
+</div>
+
+<div class="card">
+<h4>Carpaccio de Res</h4>
+<div class="price">$160 MXN</div>
+<p>Finas láminas de res con parmesano y reducción balsámica.</p>
+</div>
+
+<div class="card">
+<h4>Sopa del Chef</h4>
+<div class="price">$110 MXN</div>
+<p>Receta especial del día con ingredientes frescos.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h3>Platos Fuertes</h3>
+
+<div class="cards">
+
+<div class="card">
+<h4>Pasta Alfredo</h4>
+<div class="price">$210 MXN</div>
+<p>Pasta cremosa con queso parmesano y pollo a la parrilla.</p>
+</div>
+
+<div class="card">
+<h4>Ribeye a la Parrilla</h4>
+<div class="price">$420 MXN</div>
+<p>Corte premium acompañado de papas rústicas.</p>
+</div>
+
+<div class="card">
+<h4>Salmón al Limón</h4>
+<div class="price">$340 MXN</div>
+<p>Salmón fresco con salsa cítrica y vegetales.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h3>Postres</h3>
+
+<div class="cards">
+
+<div class="card">
+<h4>Cheesecake</h4>
+<div class="price">$110 MXN</div>
+<p>Clásico pastel de queso con frutos rojos.</p>
+</div>
+
+<div class="card">
+<h4>Volcán de Chocolate</h4>
+<div class="price">$120 MXN</div>
+<p>Pastel tibio con centro líquido de chocolate.</p>
+</div>
+
+<div class="card">
+<h4>Tiramisú</h4>
+<div class="price">$115 MXN</div>
+<p>Postre italiano con café y mascarpone.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="opiniones">
+
+<h3>Opiniones</h3>
+
+<div class="cards">
+
+<div class="card quote">
+“La mejor pasta que he probado en años.”
+</div>
+
+<div class="card quote">
+“Ambiente elegante y comida increíble.”
+</div>
+
+<div class="card quote">
+“Definitivamente regresaré.”
+</div>
+
+</div>
+
+<br>
+
+<small>Opiniones ficticias usadas solo como ejemplo visual.</small>
+
+</section>
+
+
+<section id="contact">
+
+<h3>Ubicación</h3>
+
+<div class="card">
+
+📍 Av. Gourmet #245, Ciudad Ficticia<br>
+⏰ Lunes a Domingo | 1:00 PM – 11:00 PM<br><br>
+
+<strong>⚠ Página web de ejemplo – datos no reales</strong>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Diseño web ficticio creado por <strong>SMS Studios</strong><br>
+Uso exclusivo para portafolio y demostración de habilidades
+
+</footer>
+
+</body>
+</html>
+

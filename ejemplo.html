@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>Ejemplos de Diseño Web | SMS Studios</title>
+
+<link rel="icon" type="image/png" href="SMS STUDIOS LOGO.jfif">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
+
+/* PARTICLES */
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+width:100%;
+padding:18px 60px;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(8px);
+display:flex;
+justify-content:space-between;
+z-index:100;
+}
+
+nav h1{
+color:#2bbcff;
+letter-spacing:2px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+font-size:14px;
+opacity:.8;
+}
+
+nav a:hover{
+color:#2bbcff;
+}
+
+/* HERO */
+
+.hero{
+height:60vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:0 10%;
+}
+
+.hero h2{
+font-size:55px;
+margin-bottom:20px;
+}
+
+.hero span{
+color:#2bbcff;
+}
+
+.hero p{
+max-width:700px;
+margin:auto;
+opacity:.8;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+padding:80px 10%;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+margin-top:40px;
+}
+
+/* CARD */
+
+.card{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:translateY(-12px);
+box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+
+/* IMAGE */
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+/* CONTENT */
+
+.card-content{
+padding:25px;
+text-align:center;
+}
+
+.card-content h3{
+margin-bottom:10px;
+color:#2bbcff;
+}
+
+.card-content p{
+font-size:14px;
+opacity:.8;
+margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+padding:10px 25px;
+border:1px solid #2bbcff;
+color:#2bbcff;
+text-decoration:none;
+border-radius:20px;
+transition:.3s;
+}
+
+.btn:hover{
+background:#2bbcff;
+color:black;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:40px;
+opacity:.6;
+font-size:14px;
+margin-top:40px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<canvas id="particles"></canvas>
+
+<nav>
+
+<h1>SMS STUDIOS</h1>
+
+<div>
+<a href="index.html">Inicio</a>
+<a href="#">Portafolio</a>
+<a href="index.html">Contacto</a>
+</div>
+
+</nav>
+
+
+<div class="hero">
+
+<div>
+
+<h2>Ejemplos de <span>Diseño Web Profesional</span></h2>
+
+<p>
+Estos son algunos ejemplos de páginas diseñadas para distintos tipos de negocios.
+Cada diseño demuestra la capacidad de adaptar la estética y funcionalidad
+según el estilo de cada empresa.
+</p>
+
+</div>
+
+</div>
+
+
+<section class="portfolio">
+
+<div class="cards">
+
+<!-- BARBERIA -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033">
+
+<div class="card-content">
+
+<h3>Barbería</h3>
+
+<p>
+Diseño elegante y moderno para barber shops
+con estilo masculino premium.
+</p>
+
+<a class="btn" href="barberia.html">
+VER DEMO
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESTAURANTE -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1543353071-873f17a7a088">
+
+<div class="card-content">
+
+<h3>Restaurante</h3>
+
+<p>
+Página de menú profesional para restaurantes
+con diseño gastronómico elegante.
+</p>
+
+<a class="btn" href="menu-restaurante.html">
+VER DEMO
+</a>
+
+</div>
+
+</div>
+
+
+<!-- HELADERIA -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb">
+
+<div class="card-content">
+
+<h3>Heladería</h3>
+
+<p>
+Diseño divertido y colorido ideal
+para negocios de postres y helados.
+</p>
+
+<a class="btn" href="menu-heladeria.html">
+VER DEMO
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+Diseños de ejemplo creados por <strong>SMS Studios</strong><br>
+Portafolio demostrativo de desarrollo web
+
+</footer>
+
+
+<script>
+
+/* PARTICULAS */
+
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<90;i++){
+
+particles.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speedY:Math.random()*0.6
+
+})
+
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+ctx.fillStyle="#2bbcff";
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.fill();
+
+p.y+=p.speedY;
+
+if(p.y>canvas.height){
+p.y=0;
+}
+
+})
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+</script>
+
+</body>
+</html>
+
