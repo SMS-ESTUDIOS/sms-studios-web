@@ -13,11 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
 background:#000;
@@ -33,27 +29,7 @@ inset:0;
 z-index:-1;
 }
 
-/* ANIMACIONES */
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(50px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-100%{transform:translateY(0);}
-}
-
-@keyframes glow{
-0%{box-shadow:0 0 10px rgba(0,245,255,0.2);}
-50%{box-shadow:0 0 30px rgba(0,245,255,0.6);}
-100%{box-shadow:0 0 10px rgba(0,245,255,0.2);}
-}
-
 /* HERO */
-
 header{
 min-height:100vh;
 display:flex;
@@ -74,9 +50,7 @@ font-size:3.6rem;
 font-weight:800;
 }
 
-.hero h1 span{
-color:#00f5ff;
-}
+.hero h1 span{color:#00f5ff;}
 
 .subtitle{
 font-family:'Playfair Display', serif;
@@ -93,7 +67,6 @@ margin-bottom:35px;
 }
 
 /* BOTONES */
-
 .buttons{
 display:flex;
 gap:15px;
@@ -113,37 +86,30 @@ background:#00f5ff;
 color:#000;
 }
 
-.btn-main:hover{
-transform:scale(1.05);
-}
-
 .btn-outline{
 border:2px solid #00f5ff;
 color:#00f5ff;
 }
 
-.btn-outline:hover{
+.btn-outline:hover,.btn-main:hover{
 background:#00f5ff;
 color:#000;
+transform:scale(1.05);
 }
 
 .btn-demo{
 background:#00f5ff;
 color:#000;
 font-weight:700;
-animation:glow 3s infinite;
 }
 
 /* LOGO */
-
 .hero-img img{
 max-width:360px;
-animation:float 4s infinite, glow 3s infinite;
 border-radius:25px;
 }
 
 /* SECCIONES */
-
 section{
 padding:90px 40px;
 max-width:1150px;
@@ -163,8 +129,7 @@ color:#9ffbff;
 margin-bottom:35px;
 }
 
-/* SERVICIOS */
-
+/* CARDS */
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -189,6 +154,7 @@ color:#00f5ff;
 margin-bottom:10px;
 }
 
+/* EJEMPLOS */
 .examples-box{
 background:#0e0e0e;
 padding:60px 40px;
@@ -203,6 +169,7 @@ color:#ccc;
 line-height:1.6;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
 padding:30px;
@@ -211,22 +178,17 @@ color:#555;
 }
 
 /* RESPONSIVE */
-
 @media(max-width:900px){
-
 .hero{
 grid-template-columns:1fr;
 text-align:center;
 }
-
 .buttons{
 justify-content:center;
 }
-
 }
 
 /* WATERMARK */
-
 body::after{
 content:"SMS Studios · Diseño Web Profesional";
 position:fixed;
@@ -235,7 +197,6 @@ font-size:12px;
 color:rgba(255,255,255,0.02);
 pointer-events:none;
 }
-
 </style>
 </head>
 
@@ -244,13 +205,10 @@ pointer-events:none;
 <canvas id="particles"></canvas>
 
 <header>
-
 <div class="hero">
 
 <div>
-
 <h1>SMS <span>Studios</span></h1>
-
 <div class="subtitle">Diseño web que se siente moderno</div>
 
 <p>
@@ -262,7 +220,6 @@ y atraer más clientes.
 <a href="#contacto" class="btn-main">Cotiza tu página</a>
 <a href="#servicios" class="btn-outline">Ver lo que hacemos</a>
 </div>
-
 </div>
 
 <div class="hero-img">
@@ -270,128 +227,125 @@ y atraer más clientes.
 </div>
 
 </div>
-
 </header>
 
+<!-- BENEFICIOS -->
 
 <section>
 
-<h2>¿Por qué tu negocio necesita una página web?</h2>
+<h2>Por qué TODOS los negocios necesitan una página web</h2>
 
-<div class="section-sub">Hoy tus clientes buscan todo en internet</div>
+<div class="section-sub">Hoy no estar en internet es perder clientes todos los días</div>
 
 <div class="services">
 
 <div class="card">
-<h3>Más clientes</h3>
-<p>Las personas pueden encontrar tu negocio fácilmente desde su celular.</p>
+<h3>Presencia digital obligatoria</h3>
+<p>Si tu negocio no está en internet, muchos clientes simplemente no sabrán que existes.</p>
 </div>
 
 <div class="card">
-<h3>Imagen profesional</h3>
-<p>Un negocio con página web transmite confianza y seriedad.</p>
+<h3>Confianza y profesionalismo</h3>
+<p>Una página web transmite seriedad y hace que los clientes confíen más en tu negocio.</p>
 </div>
 
 <div class="card">
 <h3>Disponible 24/7</h3>
-<p>Tus productos o servicios pueden verse en cualquier momento.</p>
+<p>Tu negocio sigue trabajando incluso cuando tú no estás disponible.</p>
 </div>
 
 <div class="card">
-<h3>Contacto rápido</h3>
-<p>Los clientes pueden contactarte fácilmente desde la web.</p>
+<h3>Ventaja sobre la competencia</h3>
+<p>Muchos negocios aún no tienen web, tú puedes destacar fácilmente.</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- EJEMPLOS -->
 
 <section id="ejemplos">
-
 <h2>Ejemplos de nuestro trabajo</h2>
-
 <div class="section-sub">Proyectos demostrativos</div>
 
 <div class="examples-box">
-
 <p>
-Este proyecto fue creado como demostración visual para mostrar
-nuestro estilo de diseño, animaciones y estructura web.
+Estos proyectos muestran diferentes estilos de diseño adaptados a distintos tipos de negocios.
 </p>
 
 <a href="ejemplo.html" class="btn-demo">
-VER EJEMPLO DE PÁGINA
+VER EJEMPLOS
 </a>
-
 </div>
-
 </section>
 
+<!-- SERVICIOS -->
 
 <section id="servicios">
-
 <h2>Nuestro enfoque</h2>
-
 <div class="section-sub">Simple · Visual · Funcional</div>
+
+<div class="services">
+<div class="card"><h3>HTML Profesional</h3><p>Webs rápidas.</p></div>
+<div class="card"><h3>Diseño Moderno</h3><p>Animaciones limpias.</p></div>
+<div class="card"><h3>Responsive</h3><p>Cualquier pantalla.</p></div>
+<div class="card"><h3>Personalizado</h3><p>Único.</p></div>
+</div>
+</section>
+
+<!-- EMPRESA -->
+
+<section id="empresa">
+
+<h2>Nuestra filosofía</h2>
+
+<div class="section-sub">La base detrás de cada proyecto</div>
 
 <div class="services">
 
 <div class="card">
-<h3>HTML Profesional</h3>
-<p>Webs rápidas y optimizadas.</p>
+<h3>Misión</h3>
+<p>Desarrollar páginas web modernas que ayuden a negocios a crecer digitalmente.</p>
 </div>
 
 <div class="card">
-<h3>Diseño Moderno</h3>
-<p>Animaciones limpias y estilo moderno.</p>
+<h3>Visión</h3>
+<p>Ser una microempresa reconocida por innovación y diseño web de calidad.</p>
 </div>
 
 <div class="card">
-<h3>Responsive</h3>
-<p>Adaptado a celulares, tablets y computadoras.</p>
-</div>
-
-<div class="card">
-<h3>Personalizado</h3>
-<p>Cada página se adapta a tu negocio.</p>
+<h3>Valores</h3>
+<p>Creatividad, calidad, compromiso e innovación constante.</p>
 </div>
 
 </div>
 
 </section>
 
+<!-- CONTACTO -->
 
 <section id="contacto">
-
 <h2>Hablemos</h2>
-
 <div class="section-sub">Tu idea empieza aquí</div>
 
 <p style="text-align:center;max-width:600px;margin:20px auto;color:#ccc;">
-Si tienes un negocio y quieres una página web moderna para mostrar tus servicios
-o atraer más clientes, contáctanos en nuestras redes sociales.
+Contáctanos en redes sociales y lleva tu negocio al siguiente nivel.
 </p>
 
 <div class="buttons" style="justify-content:center;">
-<a href="https://www.instagram.com/sms_studios_web?igsh=eWJnbHc1Y2ZjbmZ1&utm_source=qr" class="btn-main">Instagram</a>
-<a href="https://www.tiktok.com/@sms_studios?_r=1&_t=ZS-94jATe9hhnF" class="btn-outline">TikTok</a>
+<a href="#" class="btn-main">Instagram</a>
+<a href="#" class="btn-outline">TikTok</a>
 </div>
-
 </section>
 
-
 <footer>
-
-© 2026 SMS Studios · Ejemplos demostrativos
-
+© 2026 SMS Studios
 </footer>
-
 
 <script>
 
 /* PARTICULAS */
-
 const c=document.getElementById("particles");
 const ctx=c.getContext("2d");
 
@@ -399,34 +353,24 @@ c.width=innerWidth;
 c.height=innerHeight;
 
 let p=Array.from({length:60},()=>({
-
 x:Math.random()*c.width,
 y:Math.random()*c.height,
 r:Math.random()*2+1,
 dx:(Math.random()-.5)*.4,
 dy:(Math.random()-.5)*.4
-
 }));
 
 function draw(){
-
 ctx.clearRect(0,0,c.width,c.height);
-
 ctx.fillStyle="rgba(0,245,255,.6)";
-
 p.forEach(o=>{
-
 ctx.beginPath();
 ctx.arc(o.x,o.y,o.r,0,Math.PI*2);
 ctx.fill();
-
 o.x+=o.dx;
 o.y+=o.dy;
-
 });
-
 requestAnimationFrame(draw);
-
 }
 
 draw();
@@ -435,4 +379,3 @@ draw();
 
 </body>
 </html>
-```
