@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>POS | SMS Studios</title>
+
+<link rel="icon" type="image/png" href="SMS STUDIOS LOGO.jfif">
+
+<style>
+body{
+    background:#000;
+    color:#fff;
+    font-family:Poppins;
+    text-align:center;
+    margin:0;
+}
+.container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:20px;
+}
+.box{
+    background:#111;
+    padding:20px;
+    border-radius:20px;
+}
+.category{
+    margin-bottom:15px;
+    text-align:left;
+}
+.category h3{
+    color:#00f5ff;
+}
+.item{
+    display:flex;
+    justify-content:space-between;
+    background:#1a1a1a;
+    margin:5px;
+    padding:10px;
+    border-radius:10px;
+}
+button{
+    background:#00f5ff;
+    border:none;
+    padding:6px 10px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+button:hover{
+    background:#00d4ff;
+}
+ul{text-align:left;}
+
+/* BOTON INICIO AL LADO DEL TITULO */
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+}
+#btnInicio{
+    padding:10px 25px;
+    border:1px solid #00f5ff;
+    color:#00f5ff;
+    background:none;
+    border-radius:20px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+#btnInicio:hover{
+    background:#00f5ff;
+    color:#000;
+    transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header-container">
+    <h1>Punto de Venta</h1>
+    <a id="btnInicio" href="index.html">Inicio</a>
+</div>
+
+<div class="container">
+
+<div class="box">
+<h2>Productos</h2>
+<div id="productos"></div>
+</div>
+
+<div class="box">
+<h2>Carrito</h2>
+<ul id="lista"></ul>
+<h3>Total: $<span id="total">0</span></h3>
+<button onclick="comprar()">Finalizar compra</button>
+</div>
+
+</div>
+
+<a href="admin.html"><button>Admin</button></a>
+<a href="ventas.html"><button>Ventas</button></a>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig={apiKey:"AIzaSy...",projectId:"sms-studios-web"};
+firebase.initializeApp(firebaseConfig);
+const db=firebase.firestore();
+
+let carrito=[], total=0;
+const productos=document.getElementById("productos");
+const lista=document.getElementById("lista");
+const totalSpan=document.getElementById("total");
+
+/* AGRUPAR POR CATEGORÍAS */
+db.collection("productos").onSnapshot(snap=>{
+
+let categorias={};
+
+snap.forEach(doc=>{
+    let p=doc.data();
+    if(!categorias[p.categoria]) categorias[p.categoria]=[];
+    categorias[p.categoria].push(p);
+});
+
+let html="";
+
+for(let cat in categorias){
+    html+=`<div class="category"><h3>${cat}</h3>`;
+    categorias[cat].forEach(p=>{
+        html+=`
+        <div class="item">
+            ${p.nombre} - $${p.precio}
+            <button onclick="agregar('${p.nombre}',${p.precio})">+</button>
+        </div>
+        `;
+    });
+    html+=`</div>`;
+}
+
+productos.innerHTML=html;
+
+});
+
+function agregar(n,p){
+    carrito.push({nombre:n,precio:p});
+    total+=p;
+    lista.innerHTML+=`<li>${n} - $${p}</li>`;
+    totalSpan.innerText=total;
+}
+
+function comprar(){
+    if(!carrito.length) return alert("Vacío");
+
+    db.collection("ventas").add({
+        productos:carrito,
+        total:total,
+        fecha:new Date()
+    }).then(()=>{
+        alert("Venta guardada");
+        carrito=[];
+        total=0;
+        lista.innerHTML="";
+        totalSpan.innerText=0;
+    });
+}
+</script>
+
+</body>
+</html>
